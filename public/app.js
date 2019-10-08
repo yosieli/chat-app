@@ -29,12 +29,14 @@ $(document).ready(function() {
   
       if (data.method === 'update') {
         $preview.append('<div class="mb-2">' + '<b>'+ data.params.username + '</b>:<br/>' + data.params.message + '</div>');
+        console.log(data.params.username)
       }
     }
   
     $formUsername.on('submit', function(e) {
       e.preventDefault();
       var username = $(this).find('input').val();
+      console.log(username)
       send({
         id: 1,
         method: 'username',
@@ -52,6 +54,7 @@ $(document).ready(function() {
           message: $(this).find('input').val()
         }
       })
+     // console.log(message)
     })
   
   });
